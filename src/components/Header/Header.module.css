@@ -1,0 +1,8 @@
+.hedrClass{
+grid-area: h;
+    background-color: darkgreen;
+}
+.hedrClass img{
+    width: 20px;
+    border-radius: 10px;
+}

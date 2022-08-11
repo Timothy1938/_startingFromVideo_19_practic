@@ -1,0 +1,18 @@
+.main{
+    height: 600px;
+    background-color: darkolivegreen;
+}
+.a{
+   grid-area: a;
+}
+.b{
+    grid-area: b;
+}
+.main{
+    display: grid;
+    grid-template-areas: "a b";
+    grid-template-columns: 1fr 2fr;
+}
+.Textarea{
+    padding-top: 30px;
+}

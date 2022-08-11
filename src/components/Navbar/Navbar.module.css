@@ -1,0 +1,14 @@
+.navClass{
+grid-area: n;
+    background-color: forestgreen;
+}
+.isActive{
+    color: gold;
+    font-weight: 500;
+    text-decoration: none;
+
+}
+.isNoActive{
+    text-decoration: none;
+    color: blue;
+}
