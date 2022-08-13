@@ -1,9 +1,10 @@
 import {combineReducers, createStore} from "redux";
 import {ProfilePageReducer} from "./ProfilePageReducer";
-import {MessagePageReducer} from "./MessagePageReducer";
+import {MessagesPageReducer} from "./MessagesPageReducer";
 
 const reducers = combineReducers({
     ProfilePage: ProfilePageReducer,
-    MessagePage: MessagePageReducer
+    MessagesPage: MessagesPageReducer
 })
 export const store = createStore(reducers)
+

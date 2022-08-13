@@ -1,16 +1,14 @@
 import s from './Messages.module.css'
 import {Message} from "./Message/Message";
 import {DialogItem} from "./DialogItem/DialogItem";
-import {addMessageActionCreator, updateNewMessageTextActionCreator} from "../../redux/MessagePageReducer";
+import {addMessageActionCreator, updateNewMessageTextActionCreator} from "../../redux/MessagesPageReducer";
 
 
 
 export const Messages = (props: any) => {
     //let TextareaReference = React.createRef()
 
-   const OnChangeTextMessage =(text: string)=>{
-       debugger
-       props.dispatch(updateNewMessageTextActionCreator(text))}
+
     return (
         <div className={s.main}>
         <div className={s.a}>
@@ -19,8 +17,8 @@ export const Messages = (props: any) => {
         <div className={s.b}>
             {props.MessagesData.map((el:any)=><Message message={el.message}/>)}
             <div className={s.Textarea}>
-            <textarea onChange={(event)=>OnChangeTextMessage(event.currentTarget.value)} value={props.newMessageText}/>
-            <div><button onClick={()=>props.dispatch(addMessageActionCreator())}>Send</button></div>
+            <textarea onChange={(event)=>props.OnChangeTextMessage(event.currentTarget.value)} value={props.newMessageText}/>
+            <div><button onClick={props.addMessage}>Send</button></div>
             </div>
         </div>
     </div>

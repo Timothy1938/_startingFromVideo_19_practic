@@ -25,20 +25,28 @@ let initialState = {
 }
 
 
-export const MessagePageReducer = (state: any = initialState, action:any) => {
+export const MessagesPageReducer = (state: any = initialState, action:any) => {
+    debugger
     switch (action.type) {
-        case UPDATE_NEW_MESSAGE_TEXT:
-            state.newMessageText = action.text
-            return state
-        case ADD_MESSAGE:
+        case UPDATE_NEW_MESSAGE_TEXT:{
+            debugger
+            let newState = {...state}
+            newState.newMessageText = action.text
+            return newState
+        }
+        case ADD_MESSAGE:{
             debugger
             let newMessage = {id: v1(), message: state.newMessageText}
-            state.MessagesData.push(newMessage)
-            state.newMessageText = ''
-            return state
+            let newState = {...state}
+            newState.MessagesData = [...state.MessagesData]
+            newState.MessagesData.push(newMessage)
+            newState.newMessageText = ''
+            return newState
+        }
+        default: return state
     }
 
-    return state
+
 }
 
 export const updateNewMessageTextActionCreator = (props:any) => {

@@ -1,6 +1,7 @@
 import {v1} from "uuid";
 import {ProfilePageReducer} from "./ProfilePageReducer";
-import {MessagePageReducer} from "./MessagePageReducer";
+import {MessagesPageReducer} from "./MessagesPageReducer";
+//import {MessagePageReducer} from "./MessagePageReducer";
 const ADD_POST = 'ADD_POST'
 const UPDATE_NEW_POST_TEXT = 'UPDATE_NEW_POST_TEXT'
 const UPDATE_NEW_MESSAGE_TEXT = 'UPDATE_NEW_MESSAGE_TEXT'
@@ -55,7 +56,7 @@ export const store: any = {
     dispatch(action:any){
         debugger
         this._state.ProfilePage = ProfilePageReducer(this._state.ProfilePage, action)
-        this._state.MessagesPage = MessagePageReducer(this._state.MessagesPage, action)
+        this._state.MessagesPage = MessagesPageReducer(this._state.MessagesPage, action)
         _callSubscriber(this._state)
 
         /*switch (action.type){

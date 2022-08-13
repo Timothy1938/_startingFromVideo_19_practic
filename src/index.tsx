@@ -4,9 +4,9 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {store} from "./redux/redux-store";
+
+import {Provider} from "react-redux";
 //import {addMessage, addPost, state, store, subscribe, updateNewMessageText, updateNewPostText} from "./state";
-
-
 
 
 
@@ -14,9 +14,9 @@ const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 const rerenderEntireTree=(state:any)=>{root.render(
-    <React.StrictMode>
-        <App dispatch={store.dispatch.bind(store)} state={store.getState()}/>
-    </React.StrictMode>
+    <Provider store={store}>
+        <App/>
+    </Provider>
 )};
 
 //export default
@@ -24,14 +24,16 @@ const rerenderEntireTree=(state:any)=>{root.render(
     //addPost("a")
 root.render(
     <React.StrictMode>
-        <App dispatch={store.dispatch.bind(store)} state={store.getState()} />
+        <Provider store={store}>
+        <App/>
+        </Provider>
     </React.StrictMode>
 );
 
 
-store.subscribe(()=>{
+/*store.subscribe(()=>{
     debugger
-    rerenderEntireTree(store.getState())})
+    rerenderEntireTree(store.getState())})*/
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
