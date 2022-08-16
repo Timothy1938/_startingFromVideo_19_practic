@@ -29,19 +29,18 @@ export const MessagesPageReducer = (state: any = initialState, action:any) => {
     debugger
     switch (action.type) {
         case UPDATE_NEW_MESSAGE_TEXT:{
-            debugger
-            let newState = {...state}
-            newState.newMessageText = action.text
-            return newState
+            return {
+                ...state,
+                newMessageText: action.text
+            }
         }
         case ADD_MESSAGE:{
-            debugger
-            let newMessage = {id: v1(), message: state.newMessageText}
-            let newState = {...state}
-            newState.MessagesData = [...state.MessagesData]
-            newState.MessagesData.push(newMessage)
-            newState.newMessageText = ''
-            return newState
+
+            return {
+                ...state,
+                newMessageText: '',
+                MessagesData: [...state.MessagesData, {id: v1(), message: state.newMessageText}]
+            }
         }
         default: return state
     }

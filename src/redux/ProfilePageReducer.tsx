@@ -13,18 +13,19 @@ export const ProfilePageReducer = (state:any = initialState, action:any) => {
     debugger
     switch (action.type) {
         case ADD_POST: {
-            debugger
-            const newPost = {id: 5, message: state.newPostText, likes: 0}
-            let newState = {...state}
-            newState.PostsData = [...state.PostsData]
-            newState.PostsData.push(newPost)
-            newState.newPostText = ''
-            return newState
+            return {
+                ...state,
+                newPostText: '',
+                PostsData: [...state.PostsData, {id: 5, message: state.newPostText, likes: 0}]
+            }
+
         }
         case UPDATE_NEW_POST_TEXT: {
-            let newState = {...state}
-            newState.newPostText = action.newPostText
-            return newState
+
+            return {
+                ...state,
+                newPostText: action.newPostText
+            }
         }
         default: return state
     }
