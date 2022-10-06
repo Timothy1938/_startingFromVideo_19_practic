@@ -1,0 +1,9 @@
+.contentClass{
+grid-area: c;
+    background-color: darkolivegreen;
+    height: 900px;
+}
+.contentClass img{
+    width: 1250px;
+    height: 400px;
+}

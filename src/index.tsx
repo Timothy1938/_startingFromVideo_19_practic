@@ -32,7 +32,7 @@ root.render(
 
 
 /*store.subscribe(()=>{
-    debugger
+
     rerenderEntireTree(store.getState())})*/
 
 // If you want to start measuring performance in your app, pass a function

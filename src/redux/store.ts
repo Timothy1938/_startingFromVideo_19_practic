@@ -54,31 +54,31 @@ export const store: any = {
         _callSubscriber = observer
     },
     dispatch(action:any){
-        debugger
+
         this._state.ProfilePage = ProfilePageReducer(this._state.ProfilePage, action)
         this._state.MessagesPage = MessagesPageReducer(this._state.MessagesPage, action)
         _callSubscriber(this._state)
 
         /*switch (action.type){
             case ADD_POST:
-                debugger
+
                 const newPost = {id: 5, message: this._state.ProfilePage.newPostText, likes: 0}
                 this._state.ProfilePage.PostsData.push(newPost)
                 this._state.ProfilePage.newPostText = ''
                 _callSubscriber(this._state)
             break;
             case UPDATE_NEW_POST_TEXT:
-                debugger
+
                 this._state.ProfilePage.newPostText = action.newPostText
                 _callSubscriber(this._state)
                 break;
             case UPDATE_NEW_MESSAGE_TEXT:
-                debugger
+
                 this._state.MessagesPage.newMessageText = action.text
                 _callSubscriber(this._state)
                 break;
             case ADD_MESSAGE:
-                debugger
+
                 let newMessage = {id: v1(), message: this._state.MessagesPage.newMessageText}
                 this._state.MessagesPage.MessagesData.push(newMessage)
                 this._state.MessagesPage.newMessageText = ''
